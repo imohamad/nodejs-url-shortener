@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installation
 use `npm install` in `api-backend` dir & `url-shortener-frontend` dir for install libs.
+[Live Preview](http://url-shortener.dharmalab.ml/)
+![preview](http://url-shortener.dharmalab.ml/short-prev.jpg)
 
 ## Run
 use `npm start` in `api-backend` dir for run nodejs api.
@@ -14,16 +16,17 @@ use `npm serve` in `url-shortener-frontend` dir for run client side.
 install `mongoDB`  and set DB adress for `database` var for `config.js`
 
 ## API
-api adress after run: `{your_domain}:3000/api/v0.1/...`
+api adress after run: `{your_url}:3000/api/v0.1/...`
 
  - `/api/v0.1/{short_link}` - method: `GET` | redirect to original link
  - `/api/v0.1/urls` - method: `GET` | get all short url - auth necessary
  - `/api/v0.1/statics` - method `GET` | get service statics - auth necessary
  - `/api/v0.1/users/signup` - method: `POST` | sign up user
  - `/api/v0.1/users/signin` - method: `POST` | signin user
- - `/api/v0.1/urls/{user_id}` - method: `GET` | get user urls - auth necessary
+ - `/api/v0.1/urls/{user_id}` - method: `POST` | get user urls - auth necessary
  - `/api/v0.1/urls/{url}` - method: `POST` | save url for shorting - auth necessary
  - `/api/v0.1/urls/{url_id}` - method: `DELETE` | delete url - auth necessary
+
 
 
 
