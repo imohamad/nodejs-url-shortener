@@ -1,0 +1,141 @@
+<main class="main" *ngIf="showMain" [@fadeAnimation]>
+    <aside>
+        <!-- profile -->
+        <div class="profile">
+            <ul>
+                <li>{{user.username}}</li>
+                <li>{{user.email}}</li>
+            </ul>
+            <div class="line"></div>
+        </div>
+        <!-- profile -->
+
+        <!-- menu -->
+        <div class="menu">
+            <ul>
+                <li>
+                    <a (click)="showLinks()">
+                        <i class="icon-gauge"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a (click)="showProfile()">
+                        <i class="icon-user"></i> User Profile</a>
+                </li>
+                <li>
+                    <a (click)="logOutSystem()">
+                        <i class="icon-fire"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- menu -->
+
+        <!-- footer -->
+        <footer>
+            <p><a href="#" target="_blank">URL Shortener v0.0.1</a> by <a href="http://imohamad.ml" target="_blank">imohamad</a></p>
+        </footer>
+        <!-- footer -->
+    </aside>
+
+    <!-- article -->
+    <article>
+        <!-- detail-box -->
+        <div class="detail">
+            <div class="detail-box">
+                <h4>
+                    <i class="icon-link link-two"></i> All Short Links</h4>
+                <p>{{result.shortUrl}} link created</p>
+            </div>
+            <div class="detail-box">
+                <h4>
+                    <i class="icon-lightbulb"></i> Your Short Links</h4>
+                <p>{{result.youCreated}} links from you</p>
+            </div>
+            <div class="detail-box">
+                <h4>
+                    <i class="icon-angellist"></i> All Service Users</h4>
+                <p>{{result.user}} registered users</p>
+            </div>
+        </div>
+        <!-- detail-box -->
+
+        <!-- status -->
+        <p class="status">
+            <span class="success" *ngIf="showStatus" [@fadeAnimation]>{{status}}</span>
+        </p> 
+        <!-- status -->
+
+        <!-- short-field -->
+        <div *ngIf="links" [@fadeAnimation]>
+            <div class="short-field">
+                <form (submit)="shortUrl()" #form="ngForm">
+                    <input type="url" name="url" id="url" placeholder="Type URL..." autocomplete="off" [(ngModel)]="url" required pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$">
+                    <button type="submit" name="submit" id="submit" [disabled]="form.invalid || btnLoading">
+                        <img src="../../assets/images/bars.svg" *ngIf="btnLoading" />
+                        <span *ngIf="!btnLoading">Shorten it</span>
+                    </button>
+                </form>
+            </div>
+            <!-- short-field -->
+
+            <!-- pageing -->
+            <div class="page">
+                <p class="next-page" (click)="nextPage()" *ngIf="showNextPage">Next Page</p>
+                <p class="prev-page" (click)="prevPage()" *ngIf="showPrevPage">Prev Page</p>
+            </div>
+            <!-- pageing -->
+
+            
+            <!-- links-table -->
+            <div class="links-table" *ngIf="!loading">
+
+                <ul class="title">
+                    <li>
+                        <i class="icon-link"></i>Short Links</li>
+                    <li>
+                        <i class="icon-link-2"></i>Original Links</li>
+                    <li>
+                        <i class="icon-beaker"></i>Action</li>
+                </ul>
+                <ul class="link-record" *ngFor="let url of userLinksData.urlData | slice: firstItem : lastItem">
+                    <li>
+                        <p>
+                            <a href="{{url.short.shortUrl}}" target="_blank">{{url.short.shortUrl | limitText : 23}}</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="{{url.orgUrl}}" target="_blank">{{url.orgUrl | limitText : 23}}</a>
+                        </p>
+                    </li>
+                    <li>
+                        <i class="icon-trash-empty remove" (click)="removeLink(url._id)"></i>
+                    </li>
+                </ul>
+                
+            </div>
+            <!-- links-table -->
+
+            <!-- loading -->
+            <div class="loading">
+                    <img src="../../assets/images/table-loading.svg" *ngIf="loading" />
+                </div>
+                <!-- loading -->
+
+            
+        </div>
+
+        <!-- profile -->
+        <div class="big-profile" *ngIf="profile" [@fadeAnimation]>
+            <i class="icon-user"></i>
+            <p>{{user.username}}</p>
+            <p>{{user.email}}</p>
+        </div>
+        <!-- profile -->
+    </article>
+    <!-- article -->
+
+
+
+
+
+</main>

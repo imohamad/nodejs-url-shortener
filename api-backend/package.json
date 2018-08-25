@@ -1,0 +1,27 @@
+{
+  "name": "url-shortener",
+  "version": "0.0.1",
+  "description": "sample api for url shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "api",
+    "nodejs"
+  ],
+  "author": "MohamadReza Deylami",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-validator": "^5.3.0",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.5",
+    "morgan": "^1.9.0",
+    "shortid": "^2.2.12"
+  }
+}

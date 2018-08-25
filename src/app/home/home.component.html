@@ -1,0 +1,18 @@
+<section class="main" [@fadeAnimation]>
+    <form (submit)="onLoginSubmit()" #form="ngForm">
+        <input type="email" name="email" id="email" placeholder="email" autocomplete="off" [(ngModel)]="emailInput" ngModel required
+            email #email="ngModel">
+        <span class="form-error" *ngIf="email.invalid && email.touched">Enter a valid email.</span>
+        <input type="password" name="password" id="password" placeholder="password" [(ngModel)]="passwordInput" ngModel required
+            #password="ngModel">
+        <span class="form-error" *ngIf="password.invalid && password.touched">Enter password</span>
+        <button type="submit" id="submit" [disabled]="form.invalid || btnDisabled">
+            <img src="../../assets/images/bars.svg" *ngIf="btnLoading" />
+            <span *ngIf="!btnLoading">Login</span>
+        </button>
+        <p>Don't have an account?
+            <a [routerLink]="['signup']">Sign up</a>
+        </p>
+        <p class="status" *ngIf="showStatus" [@fadeAnimation]>{{status}}</p>
+    </form>
+</section>

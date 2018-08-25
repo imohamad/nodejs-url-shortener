@@ -1,0 +1,28 @@
+<section class="main" [@fadeAnimation]>
+  <form (submit)="onResgisterSubmit()" #form="ngForm">
+    <input type="email" name="email" id="email" placeholder="email" autocomplete="off" [(ngModel)]="emailInput" ngModel required
+      email #email="ngModel">
+    <span class="form-error" *ngIf="email.invalid && email.touched">Enter valid email.</span>
+    <input type="text" name="username" id="username" placeholder="username" autocomplete="off" [(ngModel)]="usernameInput" ngModel
+      pattern="^[a-z0-9]{4,15}$" required #username="ngModel">
+    <span class="form-error" *ngIf="username.invalid && username.touched">Enter valid username.</span>
+    <input type="password" name="password" id="password" placeholder="password" [(ngModel)]="passwordInput" ngModel minlength="4"
+      required #password="ngModel">
+    <span class="form-error" *ngIf="password.invalid && password.touched">Enter password, must be more than 3 characters.</span>
+    <input type="password" name="confirm-password" id="confirm-password" placeholder="confirm password" [(ngModel)]="confirmPasswordInput"
+      ngModel minlength="4" required #confirmPassword="ngModel">
+    <span class="form-error" *ngIf="confirmPassword.value != password.value && confirmPassword.touched">Password does not match.</span>
+    <button type="submit" id="submit" [disabled]="form.invalid || btnDisabled || confirmPassword.value != password.value">
+      <img src="../../assets/images/bars.svg" *ngIf="btnLoading" />
+      <span *ngIf="!btnLoading">Sign up</span>
+    </button>
+    <p>Have an account?
+      <a [routerLink]="['/']">Login</a>
+    </p>
+    <p class="success" *ngIf="showSuccess" [@fadeAnimation]>{{success}}</p>
+    <p *ngFor="let error of status" class="error" [@fadeAnimation]>
+      <span *ngIf="!showSuccess">{{error.msg}}</span>
+    </p>
+
+  </form>
+</section>
