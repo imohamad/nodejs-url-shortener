@@ -3,9 +3,11 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3 and [NodeJs](https://nodejs.org) version 8.11.2
 
 ![preview](http://url-shortener.dharmalab.ml/short-prev.jpg)
+
+[Live Preview](http://url-shortener.dharmalab.ml/)
+
 ## Installation
 use `npm install` in `api-backend` dir & `url-shortener-frontend` dir for install libs.
-[Live Preview](http://url-shortener.dharmalab.ml/)
 
 ## Run
 use `npm start` in `api-backend` dir for run nodejs api.
