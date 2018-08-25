@@ -1,6 +1,19 @@
-# FirstApp
+# Nodejs url-shortener
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3 and [NodeJs](https://nodejs.org) version 8.11.2
+
+## Installation
+use `npm install` in `api-backend` dir & `url-shortener-frontend` dir for install libs.
+
+## Run
+use `npm start` in `api-backend` dir for run nodejs api.
+use `npm serve` in `url-shortener-frontend` dir for run client side.
+ - nodejs api run on port `3000`
+ - angular run on port `4200`
+
+install `mongoDB`  and set DB adress for `database` var for `config.js`
+
+
 
 ## Development server
 
@@ -25,3 +38,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[imohamad](http://imohamad.ml).
