@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable()
 export class ApiService {
-  // private API_URL = "http://urlsh.eu-4.evennode.com/api/v0.1/";
   private API_URL = "http://localhost:3000/api/v0.1/";
   private URLS_PATH = "urls/";
   private STATICS_PATH = "statics";
