@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3 and [NodeJs](https://nodejs.org) version 8.11.2
 
-![preview](http://url-shortener.dharmalab.ml/short-prev.jpg)
+![preview](https://dl.dropboxusercontent.com/s/d4nykgkrwtk46zi/shorten.jpg)
 
 [Live Preview](http://url-shortener.dharmalab.ml/)
 
