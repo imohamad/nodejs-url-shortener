@@ -4,7 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![preview](https://dl.dropboxusercontent.com/s/d4nykgkrwtk46zi/shorten.jpg)
 
-[Live Preview](http://url-shortener.dharmalab.ml/)
 
 ## Installation
 use `npm install` in `api-backend` dir & `url-shortener-frontend` dir for install libs.
